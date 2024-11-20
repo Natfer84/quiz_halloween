@@ -1,0 +1,173 @@
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: rgb(255, 128, 0);
+}
+
+.muestra {
+    display: inline-block;
+}
+
+#titulo {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#cuerpo {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 800px;
+    max-width: 100%;
+    margin: 0px auto;
+    border-radius: 10px;
+    background-color: orange;
+    box-shadow: 1px 9px 45px black;
+    position: relative;
+}
+
+#img1{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    bottom: 66px;
+    right: 131px;
+    border-radius: 100%;
+    background-image: url(https://s1.elespanol.com/2019/10/08/como/como_hacer_435217933_134681574_1706x960.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 2px 0px 5px black;
+    opacity: 1;
+    
+    transition: transform 0.5s ease-in;
+}
+
+#img2{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: 185px;
+    right: 30px;
+    border-radius: 100%;
+    background-image: url(https://s1.elespanol.com/2019/10/08/como/como_hacer_435217933_134681574_1706x960.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 2px 0px 5px black;
+    opacity: 1;
+  
+    transition: transform 0.5s ease-in;
+}
+
+#img3{
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    bottom: 300px;
+    right: 93px;
+    border-radius: 100%;
+    background-image: url(https://s1.elespanol.com/2019/10/08/como/como_hacer_435217933_134681574_1706x960.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 2px 0px 5px black;
+    transition: transform 1s ease-in;
+}
+
+#img1:hover{
+    opacity: 1;
+    transform: translate(200px, 30px);
+}
+#img2:hover {
+    transform: translate(300px, 20px);
+    opacity: 1;
+}
+#img3:hover {
+    transform: translate(30px, 200px);
+}
+#pregunta {
+    padding: 10px;
+    margin: 20px;
+    text-align: center;
+    font-size: 20px;
+}
+
+#contenedorLista {
+    margin: 0px auto;
+    padding: 0px;
+}
+
+li {
+    list-style: none;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin: 20px;
+    background-color: rgb(250, 196, 95);
+    cursor: pointer;
+}
+
+#next-button {
+    width: 30%;
+    margin: 0px auto;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+#validacion {
+    padding: 10px;
+    margin: 20px;
+    text-align: center;
+}
+#fin{
+    margin: 0px auto;
+    margin-bottom: 20px;
+}
+
+#next-button {
+    text-align: center;
+    padding: 20px;
+    cursor: pointer;
+    background-color: rgb(250, 196, 95);
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: inset 0px 0px 11px black;
+    transition: font-size 1s ease-in-out;
+}
+#next-button:hover {
+    font-size: 22px;
+}
+#contador{
+    width: 60px;
+    height: 60px;
+    background-color: black;
+    position: absolute;
+    top: 174px;
+    left: 50px;
+    border-radius: 10000px;
+}
+#texto_contador{
+    color: black;
+    position: absolute;
+    bottom: 51px;
+    left: -8px;
+    font-size: 15px;
+    margin-bottom: 21px;
+}
+
+#numeroContador{
+    position: absolute;
+    top: 16px;
+    left: 23px;
+    color:rgb(250, 196, 95);
+    font-size: 25px;
+    font-weight: bold;
+}
