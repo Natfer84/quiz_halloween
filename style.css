@@ -37,7 +37,7 @@ body {
     height: 60px;
     position: absolute;
     bottom: 66px;
-    right: 131px;
+    right: 77px;
     border-radius: 100%;
     background-image: url(https://s1.elespanol.com/2019/10/08/como/como_hacer_435217933_134681574_1706x960.jpg);
     background-position: center;
@@ -170,4 +170,16 @@ li {
     color:rgb(250, 196, 95);
     font-size: 25px;
     font-weight: bold;
+}
+
+#contenedor_grafica{
+    height: 500px;
+    width: 700px;
+    margin: 0px auto;
+}
+
+#titulo_grafica h1{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }

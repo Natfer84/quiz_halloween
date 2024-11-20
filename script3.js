@@ -70,13 +70,13 @@ function validarRespuesta(resSeleccionada) {
     }
 
     console.log(contadorCorrecta);
-     
+
     indicePregunta++; //incrementa de uno en uno y eso hace que llame a la siguiente pregunta.
 
     //aquí vuelvo a grabar el total de las respuestas correctas del juego en localStorage.
-  
+
     localStorage.setItem('respuestasCorrectas', JSON.stringify(contadorCorrecta));
- 
+
     console.log(contadorCorrecta);
 
     document.getElementById("numeroContador").textContent = contadorCorrecta;
@@ -97,4 +97,42 @@ const botonDiv = document.querySelector('#next-button');
 botonDiv.addEventListener('click', siguientePregunta);
 
 obtenerPreguntas();
+
+
+
+
+// Recuperar los datos almacenados en localStorage y pasarlos a un array
+const datosGuardados = JSON.parse(localStorage.getItem('respuestasCorrectas'));
+let arrayDatos =[];
+arrayDatos.push(datosGuardados);
+console.log(arrayDatos);
+
+// Verificar si los datos existen
+if (arrayDatos) {
+    // Crear la gráfica usando Chart.js
+    const canvas = document.getElementById('myChart').getContext('2d');
+
+    new Chart(canvas, {
+        type: 'bar', // tipo de gráfica (puede ser 'bar', 'line', 'pie', etc.)
+        data: {
+            labels: ['Jugador 1', 'Jugador 2', 'Jugador 3'], // Etiquetas para el eje X
+            datasets: [{
+                label: 'Puntuación',
+                data: arrayDatos, // Los datos obtenidos del localStorage
+                backgroundColor: 'rgba(255, 200, 100)',
+                borderColor: 'rgba(255, 200, 100)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+} else {
+    console.log("No se encontraron datos en localStorage");
+}
 

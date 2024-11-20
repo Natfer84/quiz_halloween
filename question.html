@@ -7,14 +7,16 @@
     <title>Question</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
 
-    
+
     <header id="cabeza">
         <h1 id="titulo">Quiz de Halloween</h1>
     </header>
@@ -35,15 +37,22 @@
             </p>
             <div id="numeroContador"></div>
         </div>
-        <div id="next-button" >Siguiente pregunta</div>
-<div id="img1"></div>
-<div id="img2"></div>
-<div id="img3"></div>
-
+        <div id="next-button">Siguiente pregunta</div>
+        <div id="img1"></div>
+        <div id="img2"></div>
+        <div id="img3"></div>
 
     </main>
 
-<script src="script3.js"></script>
+    <div id="titulo_grafica">
+        <h1>Mi Gráfica</h1>
+    </div>
+
+    <div id="contenedor_grafica">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script src="script3.js"></script>
 </body>
 
 </html>
