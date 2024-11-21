@@ -2,7 +2,7 @@
 
 let preguntas = [];   //para meter el array de las preguntas
 let indicePregunta = 0; //para luego, cuando demos a siguiente se cargue la siguiente pregunta.
-let respuestaCorrecta = -1;
+let respuestaCorrecta = 0;
 let contadorCorrecta = 0;
 
 // Función para obtener las preguntas de la API
