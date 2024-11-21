@@ -1,5 +1,6 @@
 
 
+
 let preguntas = [];   //para meter el array de las preguntas
 let indicePregunta = 0; //para luego, cuando demos a siguiente se cargue la siguiente pregunta.
 let respuestaCorrecta = 0;
@@ -90,35 +91,43 @@ function siguientePregunta() {
     } else {
         document.getElementById("fin").textContent = "Se terminó el juego!!";
         //document.getElementById("next-button").style.display = "none";
+        finalizarJuego();
     }
-
 }
+
 const botonDiv = document.querySelector('#next-button');
 botonDiv.addEventListener('click', siguientePregunta);
 
 obtenerPreguntas();
 
+/////////////////////Gráfica/////////////////
 
+function registrarPuntuacion(contadorCorrecta) {
+    // Recuperamos las puntuaciones existentes, o inicializamos un array vacío
+    let puntuaciones = JSON.parse(localStorage.getItem("puntuaciones")) || [];
 
+    // Agregamos la nueva puntuación al array
+    puntuaciones.push(contadorCorrecta);
 
-// Recuperar los datos almacenados en localStorage y pasarlos a un array
-const datosGuardados = JSON.parse(localStorage.getItem('respuestasCorrectas'));
-let arrayDatos =[];
-arrayDatos.push(datosGuardados);
-console.log(arrayDatos);
+    // Guardamos el array actualizado en localStorage
+    localStorage.setItem("puntuaciones", JSON.stringify(puntuaciones)); 
+}
 
 // Verificar si los datos existen
-if (arrayDatos) {
+function actualizarGrafica() {
+    // Recuperamos las puntuaciones guardadas
+    const puntuaciones = JSON.parse(localStorage.getItem("puntuaciones")) || [];
+if (puntuaciones) {
     // Crear la gráfica usando Chart.js
     const canvas = document.getElementById('myChart').getContext('2d');
 
     new Chart(canvas, {
         type: 'bar', // tipo de gráfica (puede ser 'bar', 'line', 'pie', etc.)
         data: {
-            labels: ['Jugador 1', 'Jugador 2', 'Jugador 3'], // Etiquetas para el eje X
+            labels: ['Partida 1', 'Partida 2', 'Partida 3'], // Etiquetas para el eje X
             datasets: [{
                 label: 'Puntuación',
-                data: arrayDatos, // Los datos obtenidos del localStorage
+                data: puntuaciones, // Los datos obtenidos del localStorage
                 backgroundColor: 'rgba(255, 200, 100)',
                 borderColor: 'rgba(255, 200, 100)',
                 borderWidth: 1
@@ -135,4 +144,16 @@ if (arrayDatos) {
 } else {
     console.log("No se encontraron datos en localStorage");
 }
+}
+
+
+function finalizarJuego() {
+    registrarPuntuacion(contadorCorrecta); // Guardamos la puntuación del jugador actual
+    contadorCorrecta = 0; // Reiniciamos el contador para un nuevo juego
+    document.getElementById("numeroContador").textContent = contadorCorrecta; // Actualizamos visualmente
+
+    // Mostramos la gráfica con las puntuaciones acumuladas
+    actualizarGrafica();
+}
+
 
