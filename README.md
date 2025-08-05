@@ -42,6 +42,6 @@ Las preguntas se obtienen dinámicamente desde una **API REST** al iniciar el ju
 ```plaintext
 📁 proyecto-trivial-halloween/
 ├── index.html
+├── script3.js
 ├── style.css
-├── script.js
 └── README.md
